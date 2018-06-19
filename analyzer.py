@@ -42,13 +42,13 @@ for tweet in public_tweets:
         if analysis.sentiment.subjectivity<0.5:
             print('Its objective ')
         elif analysis.sentiment.subjectivity>0.5:
-            print('Its subjevtive ')
+            print('Its subjective ')
     elif analysis.sentiment.polarity>0:
         print('Its a positive feeling ')
         if analysis.sentiment.subjectivity<0.5:
             print('Its objective ')
         elif analysis.sentiment.subjectivity>0.5:
-            print('Its subjevtive ')
+            print('Its subjective ')
 
 
 
