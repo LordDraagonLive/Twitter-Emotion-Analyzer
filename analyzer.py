@@ -29,7 +29,7 @@ auth.set_access_token(access_token,access_token_secret)
 api = tweepy.API(auth)
 
 # Search for all the tweets with the specified keyword
-public_tweets = api.search('Buddhi')
+public_tweets = api.search('Sri Lanka')
 
 for tweet in public_tweets:
     print(tweet.text)
@@ -49,6 +49,8 @@ for tweet in public_tweets:
             print('Its objective ')
         elif analysis.sentiment.subjectivity>0.5:
             print('Its subjective ')
+    else:
+        print('Its a Neutral Feeling ')
 
 
 
