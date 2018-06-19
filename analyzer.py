@@ -29,7 +29,7 @@ auth.set_access_token(access_token,access_token_secret)
 api = tweepy.API(auth)
 
 # Search for all the tweets with the specified keyword
-public_tweets = api.search('Trump')
+public_tweets = api.search('Buddhi')
 
 for tweet in public_tweets:
     print(tweet.text)
@@ -37,6 +37,18 @@ for tweet in public_tweets:
     analysis = TextBlob(tweet.text)
     # Printing the analysis result
     print(analysis.sentiment)
+    if analysis.sentiment.polarity<0:
+        print('Its a negative feeling ')
+        if analysis.sentiment.subjectivity<0.5:
+            print('Its objective ')
+        elif analysis.sentiment.subjectivity>0.5:
+            print('Its subjevtive ')
+    elif analysis.sentiment.polarity>0:
+        print('Its a positive feeling ')
+        if analysis.sentiment.subjectivity<0.5:
+            print('Its objective ')
+        elif analysis.sentiment.subjectivity>0.5:
+            print('Its subjevtive ')
 
 
 
